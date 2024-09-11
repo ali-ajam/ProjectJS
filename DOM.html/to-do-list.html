@@ -13,11 +13,32 @@
       name:"make dinner",
       date:"2022-12-22"
      }];
+     renderToDoList();
+     function renderToDoList(){
+      let toDoListHTML='';
+      for(let i=0; i<toDoList.length; i++){
+        const toDoListObj=toDoList[i];
+        const {name , date}=toDoListObj;
+        const html=`
+        <div>${name}</div>
+        <div>${date}</div>
+        <button onclick="
+        toDoList.splice(${i},1);
+        renderToDoList();" class="delete">Delete</button>`;
+        toDoListHTML+=html;
+      }
+      document.querySelector('.todo-list').innerHTML=toDoListHTML;
+
+     }
      function addToDo(){
-      const input=document.querySelector('.name-input');
-      toDoList.push(input.value);
-      input.vlue='';
-      console.log(toDoList);
+      const name=document.querySelector('.name-input').value;
+      const date=document.querySelector('.date-input').value;
+      toDoList.push({
+        name,
+        date
+      });
+      name='';
+      renderToDoList();
      }
     </script>
   </body>
