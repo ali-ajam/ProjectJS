@@ -7,9 +7,12 @@
     <p>
       Rock Paper Scissors
     </p>
-    <button>Rock</button>
-    <button>Scissors</button>
-    <button>Paper</button>
+    <button onclick="
+    playGame('rock'); ">Rock</button>
+    <button onclick="
+    playGame('scissors'); ">Scissors</button>
+    <button onclick="
+    playGame('paper'); ">Paper</button>
     <script>
       function randomNum(){
         const num=Math.random();
@@ -53,10 +56,8 @@
             result="tie";
           }
         }
-        alert("")
+        alert(`You picked ${playerMove}.Computer picked ${computerMove}.${result});
       }
-
-
     </script>
   </body>
 </html>
