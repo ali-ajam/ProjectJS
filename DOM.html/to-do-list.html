@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>to do list</title>
+  </head>
+  <body>
+    <input placeholder="Todo name" class="name-input">
+    <input type="date" calss="date-input">
+    <button onclick="
+    addToDo(); ">add</button>
+    <script>
+     let toDoList=[{
+      name:"make dinner",
+      date:"2022-12-22"
+     }];
+     function addToDo(){
+      const input=document.querySelector('.name-input');
+      toDoList.push(input.value);
+      input.vlue='';
+      console.log(toDoList);
+     }
+    </script>
+  </body>
+</html>
