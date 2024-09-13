@@ -6,7 +6,7 @@
   <body>
     <div>
       <input placeholder="Todo name" class="name-input">
-      <input type="date" calss="date-input">
+      <input type="date" class="date-input">
       <button onclick="
       addToDo(); ">add</button>
     </div>
@@ -34,13 +34,16 @@
 
      }
      function addToDo(){
-      const name=document.querySelector('.name-input').value;
-      const date=document.querySelector('.date-input').value;
+      const nameInput=document.querySelector('.name-input');
+      const dateInput=document.querySelector('.date-input');
+      const name= nameInput.value;
+      const date= dateInput.value;
       toDoList.push({
         name,
         date
       });
-      name='';
+      nameInput.vlue='';
+      dateInput.value='';
       renderToDoList();
      }
     </script>
