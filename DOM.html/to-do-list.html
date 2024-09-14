@@ -2,15 +2,16 @@
 <html>
   <head>
     <title>to do list</title>
+    <link rel="stylesheet" href="../styles/to-do-list.css">
   </head>
   <body>
-    <div>
+    <div class="input-grid">
       <input placeholder="Todo name" class="name-input">
       <input type="date" class="date-input">
       <button onclick="
       addToDo(); ">add</button>
     </div>
-    <div class="todo-list"></div>
+    <div class="todo-list todo-grid" ></div>
     <script>
      let toDoList=[{
       name:"make dinner",
@@ -42,7 +43,7 @@
         name,
         date
       });
-      nameInput.vlue='';
+      nameInput.value='';
       dateInput.value='';
       renderToDoList();
      }
